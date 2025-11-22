@@ -1,0 +1,36 @@
+
+{% extends "global/base.html" %}
+
+{% comment "" %}
+    criar o title de cada pagina
+{% endcomment %}
+
+{% block title %}Category |{% endblock title %}
+
+{% comment "" %}
+    block para adicona o conteudo no base-global do html 
+{% endcomment %}
+{% block content %}
+<div class="main-content main-content-list container">
+
+
+    {% comment "" %} 
+
+    for-each para pegar cada elemento do recipes na pasta -- views --
+    o Django já faz a ligação apenas com os nomes
+    
+    {% endcomment %}
+
+    {% for recipe in recipes  %}
+
+
+    {% comment "" %}
+        include para incluir elementos
+    {% endcomment %}
+
+    {% include "recipes/partials/recipe.html" %}
+
+    {% endfor %}
+
+</div>
+{% endblock content %}
